@@ -1,0 +1,164 @@
+*{color: white}
+
+body {
+    color:white;
+    background: rgb(35, 35, 35);
+}
+
+input {
+    text-align: center;
+    background: rgb(35, 35, 35);
+    width: 97.5%;
+}
+
+image#uchilka{
+    width: 10px !important;
+}
+
+button#sendButton{
+
+    border: 2px solid rgb(0, 0, 0);
+    background: rgb(192, 32, 32);
+    width: 50%;
+    margin-left: 23%;
+    transition: 50ms;
+}
+
+button#sendButton:active{
+    background: rgb(120, 120, 120);
+    transition: 50ms;
+}
+
+table{
+    margin-bottom: 2%;
+    height: auto;
+}
+
+ul {
+    margin-left: 0; /* Отступ слева в браузере IE и Opera */
+    padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+   }
+li{
+    display: inline;
+    list-style-type: none;
+}
+
+.header{
+    font-family: cursive;
+    margin-left: 5%; 
+    margin-right: 5%;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid rgb(192, 32, 32);
+    background: black;
+    width: 90%;
+    height: 50px;
+    text-align: center;
+}
+
+.header::before {
+    content: '\2049';
+    position: absolute;
+    color: red;
+    top: 1%;
+    left: 1%;
+    font-family: Georgia, serif;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: bold;
+  }
+
+  .header::after {
+    content: '\2049';
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    color: red;
+    font-family: Georgia, serif;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: bold;
+  }
+  
+.comment{
+    width: auto;
+    background: yellow;
+    border-radius: 10px;
+    text-align: center;
+}
+.comment{
+    width: auto;
+    background: rgb(70, 70, 70);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.requestForm{
+    border: 1px solid rgb(192, 32, 32); /* Рамка вокруг таблицы */
+    margin: auto; /* Выравниваем таблицу по центру окна  */
+    height: 35%;
+    width: 95% !important;
+    background: rgb(45, 45, 45);
+}
+
+.image{
+    border: 10px;
+}
+
+.resultBox{
+    height: 300px;
+    width: 30%;
+    background: rgb(70, 70, 70);
+}
+
+.memoryBlock{
+    width: 30%;
+}
+
+.message{
+    width: 100%;
+    background: rgb(165, 18, 18);
+    border-radius: 10px;
+    text-align: center;
+    display: none;  /* IMPORTANT */
+}
+
+.footer{
+    text-align: left; 
+    list-style-type:decimal-leading-zero !important;
+    margin: 3%;
+}
+td#Footer{
+    padding: 3%;
+    margin: 10%;
+    width: 80%;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid rgb(192, 32, 32);
+    background-color: black;
+
+}
+
+
+table#storageTable {
+    width: 100%;
+    display:block;
+}
+thead{
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+}
+tbody#storage {
+    height: 240px;
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+tbody#storage>tr{
+    width: 100%;
+}
+
+

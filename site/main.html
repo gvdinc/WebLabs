@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Лабораторная работа 1</title>
+    <script src="./scripts/sender.js"></script>
+</head>
+<body>
+    <table class="header">
+        <tr>
+            <th>
+                Вар номер: 1106 
+            </th>
+            <th>
+                Гребёнкин Вадим Дмитриевич
+            </th>
+            <th>
+                номер isu: 335053
+            </th>
+        </tr>
+    </table>
+
+    <table border="1" cellpadding="0" cellspacing="0" width="100%">
+        
+
+        <tr>
+            <td colspan="1" width="317px">
+                
+                <ul width="100%" list-style-type="none" class = "requestForm">
+                    <form name = "requestForm" onsubmit="checkPoint(); return false;" method="get">
+                        <li> 
+                            <p class="comment">введите координату x:</p>
+                            <input name="x">
+                        </li> 
+                        <li> 
+                            <p class="comment">введите координату y:</p>
+                            <input name="y"> 
+                        </li> 
+                        <li> 
+                            <p class="comment">введите координату R:</p>
+                            <input name="R"> 
+                        </li> 
+                        <li>
+                            <button type="submit" id="sendButton">
+                                Проверить координаты
+                            </button>
+                        </li>
+                    </form>
+                    <li>
+                        <strong class="message" id="error"> <img src="https://www.meme-arsenal.com/memes/2850d0e1addbb7f374bca077fd647628.jpg" jsaction="load:XAeZkd;" jsname="HiaYvf" class="uchilka" alt="злая учительница фото - Создать мем - Meme-arsenal.com" data-noaft="1" style="width: 300px; height: 195px; margin: 4.05px 0px;"> </strong>
+                    </li>
+                </ul>
+                
+            </td>
+
+            <td colspan="1" class="resultBox">
+                    <p class="i"><img id="resImg" src="./source/img/areas_2.png" alt="img unavailable"></p>
+                    <p id = 'resText'>Результат: ваша точка
+                    попадает в заданную область</p>
+            </td>
+
+            <td class="memoryBlock">
+                memory
+
+                <table id="storageTable" border="1" cellpadding="0" cellspacing="0" width="100%">
+                    <thead width="100%">
+                      <tr width="100%">
+                        <th id="1" width="10%">x</th>
+                        <th id="2" width="10%">y</th>
+                        <th id="3" width="10%">R</th>
+                        <th id="4" width="10%">res</th>
+                        <th id="5" width="10%">time</th>
+                      </tr>
+                    </thead>
+                    <tbody id="storage">
+                    </tbody>
+                  </table>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" id="Footer">
+                <ul class="footer">
+                    <li><h2>Задание</h2><br></li>
+                    <li>Для расположения текстовых и графических элементов необходимо использовать табличную верстку.<br></li>
+                    <li>Данные формы должны передаваться на обработку посредством GET-запроса.<br></li>
+                    <li>Таблицы стилей должны располагаться в самом веб-документе.<br></li>
+                    <li>При работе с CSS должно быть продемонстрировано использование селекторов псевдо элементов, селекторов элементов, селекторов классов, селекторов атрибутов а также такие свойства стилей CSS, как наследование и каскадирование.<br></li>
+                    <li>HTML-страница должна иметь "шапку", содержащую ФИО студента, номер группы и номер варианта. При оформлении шапки необходимо явным образом задать шрифт (cursive), его цвет и размер в каскадной таблице стилей.<br></li>
+                    <li>Отступы элементов ввода должны задаваться в процентах.<br></li>
+                    <li>Страница должна содержать сценарий на языке JavaScript, осуществляющий валидацию значений, вводимых пользователем в поля формы. Любые некорректные значения (например, буквы в координатах точки или отрицательный радиус) должны блокироваться.<br></li>
+                </ul>
+            </td>
+        </tr>
+        <!-- <tr>
+            <td class="comment">введите координату x:</td>
+            <td><input></td>
+            <td class="message">message</td>
+        </tr>
+        <tr>
+            <td class="comment"></td>
+            <td><button>отправить на проверку</button></td>
+        </tr>
+     -->
+
+        
+    </table>
+
+</body>
