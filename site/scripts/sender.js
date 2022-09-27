@@ -27,6 +27,7 @@ function get(x, y, z){
             console.log(s);
             if (s == null || s==" "){s = 0;}
             document.getElementById('resImg').setAttribute("src", "./source/img/areas_"+ s +".png")
+            document.getElementById('resText').innerHTML = ("ваша точка " + ((s == 0) ? "не" : "") + " попала в заданную облать");
        }
     );
  }
