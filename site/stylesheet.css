@@ -43,6 +43,12 @@ li{
     list-style-type: none;
 }
 
+select{
+    background-color: rgb(35, 35, 35);
+    margin-left: 5%;
+    text-align: center;
+}
+
 .header{
     font-family: cursive;
     margin-left: 5%; 
@@ -106,8 +112,10 @@ li{
 }
 
 .resultBox{
+    margin: auto;
+    text-align: center;
     height: 300px;
-    width: 30%;
+    width: 40%;
     background: rgb(70, 70, 70);
 }
 
@@ -128,6 +136,18 @@ li{
     list-style-type:decimal-leading-zero !important;
     margin: 3%;
 }
+
+.xerContainer{
+   background-color:  rgba(0, 0, 0, 0.21); 
+   color: white;
+   text-align: center;
+   width: 40%;
+   margin: auto;
+   margin-bottom: 7px;
+   border-radius: 10px;
+}
+
+
 td#Footer{
     padding: 3%;
     margin: 10%;
@@ -153,12 +173,11 @@ tbody#storage {
     height: 240px;
     display: inline-block;
     margin: auto;
-    width: 100%;
+    width: 95%;
     overflow-y: auto;
     overflow-x: hidden;
 }
-tbody#storage>tr{
-    width: 100%;
-}
-
+/* tbody#storage>tr{
+    width: 100px !important;
+} */
 

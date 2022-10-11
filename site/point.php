@@ -9,13 +9,7 @@
         unset($taskList);  // update finished
 
         $file = file_get_contents('data.json');  // Открыть файл data.json
-        // echo "<tr>
-        //         <th scope=\"col\">x</th>
-        //         <th scope=\"col\">y</th>
-        //         <th scope=\"col\">R</th>
-        //         <th scope=\"col\">res</th>
-        //         <th scope=\"col\">time</th>
-        //         </tr>";
+        
 
         $jsonIterator = new RecursiveIteratorIterator(
         new RecursiveArrayIterator(json_decode($file, TRUE)),
@@ -25,28 +19,11 @@
             if ($i%7==0){echo "<tr>";}
             if(is_array($val)) {
             } else {
-                echo "<th width=\"10%\"> $val</th>";
+                echo "<th width=100px> $val</th>";
             }
             if ($i%7==6){echo "</tr>";}
             $i++;
         }
-        // for($i = 0; $i < count($taskList); $i++){
-        //     $json_items = $taskList[$i][0];
-        //     //var_dump($json_items);
-        //     $arr = explode(", ", $json_items);
-
-        //     echo "\n\n\n";
-        //     var_dump($arr);
-        //     var_dump($arr[0]);
-
-        //     echo "<tr>";
-        //     echo "<th>". $arr[0] ."</th>";
-        //     echo "<th>". $arr[1] ."</th>";
-        //     echo "<th>". $arr[2] ."</th>";
-        //     echo "<th>". $arr[3] ."</th>";
-        //     echo "<th>". $arr[4] ."</th>";
-        //     echo "</tr>";
-        // }
     }
 
     function isInSquare($X, $Y, $radius){
@@ -69,13 +46,12 @@
         $start = microtime(true);
         
 
-        $x = $_GET['x']; // initialise variables
+        $x = $_GET['x']; 
         $y = $_GET['y'];
         $R = $_GET['R'];
         $inSquareFlag = isInSquare($x, $y, $R);
         $timing = round((microtime(true) - $start)*1000000);
         updateStorage($x, $y, $R, $inSquareFlag, $timing);
-        //echo (($inSquareFlag) ? "positive" : "negative");
     }
     
     

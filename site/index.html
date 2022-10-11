@@ -29,17 +29,31 @@
                 
                 <ul width="100%" list-style-type="none" class = "requestForm">
                     <form name = "requestForm" onsubmit="checkPoint(); return false;" method="get">
-                        <li> 
-                            <p class="comment">введите координату x:</p>
-                            <input name="x">
+                        <li > 
+                            <p class="comment" id="xComment">введите координату x: (0 по умолчанию)</p>
+                            <p class="xerContainer"><input class = "xer" type="checkbox" value="-2" name="x1" onchange="checkBoxChange('x1');">-2</p>
+                            <p class="xerContainer"><input class = "xer" type="checkbox" value="-1.5" name="x2" onchange="checkBoxChange('x2');">-1.5</p> 
+                            <p class="xerContainer"><input class = "xer" type="checkbox" value="-1" name="x3" onchange="checkBoxChange('x3');">-1</p> 
+                            <p class="xerContainer"><input class = "xer" type="checkbox" value="-0.5" name="x4" onchange="checkBoxChange('x4');">-0.5</p> 
+                            <p class="xerContainer"><input class = "xer" type="checkbox" value="0" name="x5" onchange="checkBoxChange('x5');">0</p> 
+                            <p class="xerContainer"><input class = "xer" type="checkbox" value="0.5" name="x6" onchange="checkBoxChange('x6');">0.5</p> 
+                            <p class="xerContainer"><input class = "xer" type="checkbox" value="1" name="x7" onchange="checkBoxChange('x7');">1</p> 
+                            <p class="xerContainer"><input class = "xer" type="checkbox" value="1.5" name="x8" onchange="checkBoxChange('x8');">1.5</p> 
+                            <p class="xerContainer"><input class = "xer" type="checkbox" value="2" name="x9" onchange="checkBoxChange('x9');">2</p> 
                         </li> 
                         <li> 
-                            <p class="comment">введите координату y:</p>
-                            <input name="y"> 
+                            <p class="comment" id="yComment">введите координату y:</p>
+                            <input name="y" onkeyup="this.value = this.value.replace(/[^\d^.]/g,'');"> 
                         </li> 
                         <li> 
-                            <p class="comment">введите координату R:</p>
-                            <input name="R"> 
+                            <p class="comment" id="RComment">введите координату R:</p>
+                            <select name="R"> 
+                                <option value=1 selected>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                              </select>
                         </li> 
                         <li>
                             <button type="submit" id="sendButton">
@@ -62,14 +76,15 @@
             <td class="memoryBlock">
                 memory
 
-                <table id="storageTable" border="1" cellpadding="0" cellspacing="0" width="100%">
+               
+                <table id="storageTable" width="100%">
                     <thead width="100%">
                       <tr width="100%">
-                        <th id="1" width="10%">x</th>
-                        <th id="2" width="10%">y</th>
-                        <th id="3" width="10%">R</th>
-                        <th id="4" width="10%">res</th>
-                        <th id="5" width="10%">time</th>
+                        <th id="1" width=80px>x</th>
+                        <th id="2" width=80px>y</th>
+                        <th id="3" width=80px>R</th>
+                        <th id="4" width=80px>res</th>
+                        <th id="5" width=80px>time</th>
                       </tr>
                     </thead>
                     <tbody id="storage">
@@ -78,7 +93,8 @@
 
             </td>
         </tr>
-
+    </table> 
+    <table>
         <tr>
             <td colspan="3" id="Footer">
                 <ul class="footer">
@@ -93,18 +109,8 @@
                 </ul>
             </td>
         </tr>
-        <!-- <tr>
-            <td class="comment">введите координату x:</td>
-            <td><input></td>
-            <td class="message">message</td>
-        </tr>
-        <tr>
-            <td class="comment"></td>
-            <td><button>отправить на проверку</button></td>
-        </tr>
-     -->
-
+    </table>   
         
-    </table>
+    
 
 </body>

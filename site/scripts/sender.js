@@ -1,16 +1,47 @@
+function getXValue(){
+    Xres = 0;
+    Xres = getCheckedCheckBoxesSumm();
+    return Xres;
+}
+
+function getCheckedCheckBoxesSumm() {
+    var checkboxes = document.getElementsByClassName('xer');
+    var checkboxesChecked = []; // можно в массиве их хранить, если нужно использовать 
+    for (var index = 0; index < checkboxes.length; index++) {
+       if (checkboxes[index].checked) {
+          checkboxesChecked.push(parseFloat(checkboxes[index].value)); 
+       }
+    }
+    let res = 0;
+    checkboxesChecked.forEach(i => res += i);
+    return res; // для использования в нужном месте
+  }
+
+function checkBoxChange(name) {
+    var checkboxes = document.getElementsByClassName('xer');
+    for (var index = 0; index < checkboxes.length; index++) {
+        if (checkboxes[index].checked && checkboxes[index].name != name) {
+            checkboxes[index].checked = false; 
+        }
+    } 
+}
+
 function Coordinates(xline, yline, Rline) {
     this.x = xline;
     this.y = yline;
     this.r = Rline;
 
     this.Validate = function (){
+        console.log(this.x, this.y, this.r);
+        xres = true;
         let re = /^((\s*(-?)\d+(\.\d+)?\s*)?)$/m;
-        if (!re.test(this.x)) {console.error("неверное значение x (" + this.x + ")"); }
         if (!re.test(this.y)) {console.error("неверное значение y (" + this.y + ")"); }
-        if (!re.test(this.r)) {console.error("неверное значение R (" + this.r + ")"); }
-        let res = re.test(this.x) && re.test(this.y) && re.test(this.r);
-        document.getElementById("error").style.display = (res) ? 'none' : 'inline';
-        return res;
+        let yres = /*re.test(this.x) &&*/ re.test(this.y);
+        yres = yres & this.y <= 3 & this.y >= -3;
+        document.getElementById("yComment").style.background = (yres) ? 'rgb(70, 70, 70)' : 'rgb(255, 0, 0)';
+        
+
+        return xres && yres;
     }
 }
 
@@ -33,18 +64,22 @@ function get(x, y, z){
  }
 
 function checkPoint(){
+    console.log("comilation...")
     let inputs = new Array(
-        document.forms["requestForm"]["x"].value, 
+
+        getXValue(), 
         document.forms["requestForm"]["y"].value,
         document.forms["requestForm"]["R"].value
         );
-    for(i = 0; i < 3; i++){if (inputs[i]==""){alert("Заполните все поля!"); return false;}}
+        
+    console.log(inputs);
+    if (inputs[1]==""){document.getElementById("yComment").style.background = 'rgb(255, 0, 0)'; return false;}
     let coords = new Coordinates( inputs[0], inputs[1], inputs[2]);
     isCorrect = coords.Validate();
-    if (!isCorrect){alert("Невеное значение переменной!"); return false;} // тут можно подробно указать error
+    if (!isCorrect){ return false;} // тут можно подробно указать error
 
     res = get(inputs[0], inputs[1], inputs[2]);
-    if (res) console.log("sucess!");
+    if (res) console.log("success!");
     
 }
 
